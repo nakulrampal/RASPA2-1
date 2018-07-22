@@ -2725,6 +2725,18 @@ int ReadInput(char *input)
           Components[CurrentComponent].Widom=TRUE;
       }
     }
+    if(strcasecmp("CFWidomProbability",keyword)==0)
+    {
+      if(sscanf(arguments,"%lf",&Components[CurrentComponent].ProbabilityCFWidomLambdaMove))
+      {
+        if(Components[CurrentComponent].ProbabilityCFWidomLambdaMove>0.0)
+        {
+          Components[CurrentComponent].Widom=TRUE;
+          for(i=0;i<NumberOfSystems;i++)
+            Components[CurrentComponent].CFMoleculePresent[i]=TRUE;
+        }
+      }
+    }
     if(strcasecmp("GibbsWidomProbability",keyword)==0)
     {
       if(sscanf(arguments,"%lf",&Components[CurrentComponent].ProbabilityGibbsWidomMove))
