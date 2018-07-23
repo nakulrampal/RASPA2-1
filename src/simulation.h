@@ -104,7 +104,6 @@ extern REAL **CFRXMCWangLandauScalingFactor;
 
 //----------------------------------------------------------------------------------------
 
-
 extern int NumberOfPartialPressures;
 extern int CurrentPartialPressure;
 
